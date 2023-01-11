@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/neutronmail/static/css/main.abd64e84.css",
+    "main.js": "/neutronmail/static/js/main.d1fe899b.js",
+    "static/js/787.18cb1d09.chunk.js": "/neutronmail/static/js/787.18cb1d09.chunk.js",
+    "index.html": "/neutronmail/index.html",
+    "main.abd64e84.css.map": "/neutronmail/static/css/main.abd64e84.css.map",
+    "main.d1fe899b.js.map": "/neutronmail/static/js/main.d1fe899b.js.map",
+    "787.18cb1d09.chunk.js.map": "/neutronmail/static/js/787.18cb1d09.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.d1fe899b.js"
+  ]
+}
