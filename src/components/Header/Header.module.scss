@@ -1,0 +1,56 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
+.header {
+  display: flex;
+  gap: 40vw;
+  @include possitionTopLeft(relative, 1vw, 5vw);
+
+  span:hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.logo {
+  @include font("TitilliumWeb-Bold", #858688, 1.8vw, left);
+}
+
+.languages {
+  @include font("TitilliumWeb-Regular", #959595, 0.9vw, left);
+
+  display: flex;
+  gap: 1vw;
+}
+
+.navbar {
+  @include font("TitilliumWeb-Regular", #454545, 1vw, left);
+
+  display: flex;
+  gap: 1vw;
+
+  .log_in {
+        font-weight: bold;
+  }
+}

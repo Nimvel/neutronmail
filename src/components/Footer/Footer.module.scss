@@ -1,0 +1,17 @@
+.footer {
+  .footer_title {
+    @include font("TitilliumWeb-Bold", #5c5c5c, 18px, left);
+    }
+  
+    .footer_text {
+    @include font("TitilliumWeb-Regular", #5c5c5c, 14px, left);
+    }
+  
+    .footer_bold_text {
+    @include font("TitilliumWeb-Bold", #5c5c5c, 14px, left);
+    }
+  
+    .copyright_text {
+    @include font("TitilliumWeb-Regular", #5c5c5c, 12px, center);
+    }
+}

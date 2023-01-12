@@ -1,0 +1,72 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family; 
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
+.App {
+  user-select: none;
+  text-justify: center;
+  /* text-align: center; */
+  @include font("TitilliumWeb-Regular", #959595, 1vw, left);
+
+  .button {
+    @include font("TitilliumWeb-Regular", white, 1vw, center);
+    // font-weight: bold;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 1vw;
+
+    background: linear-gradient(to right, #717fa0, #5f2966);
+    box-shadow: 0 0.3vw 1vw #6d76a4;
+
+    height: 1.7vw;
+    width: 5vw;
+    }
+
+  
+  
+}
+
+@font-face {
+  /* TitilliumWeb-SemiBold */
+  font-family: "TitilliumWeb-SemiBold"; 
+  src: url("./assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("truetype");
+  } 
+
+@font-face {
+  /* TitilliumWeb-Regular */
+  font-family: "TitilliumWeb-Regular"; 
+  src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
+  } 
+
+@font-face {
+  /* TitilliumWeb-Bold */
+  font-family: "TitilliumWeb-Bold "; 
+  src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
+  } 
+
+@font-face {
+  /* Niconne-Regular */
+  font-family: "Niconne-Regular"; 
+  src: url("./assets/fonts/Niconne/Niconne-Regular.ttf") format("truetype");
+  } 

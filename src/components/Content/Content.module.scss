@@ -1,0 +1,73 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+  // background-image: url($url);
+  // linear-gradient(to right, #717fa0, #5f2966)
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family; 
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
+.content {
+
+  .header {
+
+    .title {
+      @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 60px, center);
+    }
+
+    .text, .red_text {
+    @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 40px, center);
+    }
+
+    .red_text {
+      color: red;
+    }
+
+    .background {
+      @include image("../../assets/images/background.png", center, cover);
+    }
+
+    // .apple, .play {
+    //   @include dimensions(13vw, 13vw);
+    // }
+  }
+  
+}
+
+.apple {
+  @include image("../../assets/images/img_1.png", center, cover);
+
+}
+
+.play {
+  @include image("../../assets/images/play.png", center, 100%);
+}
+
+.columns {
+  @include font("TitilliumWeb-Regular", #555555, 14px, left);
+
+  .column_title {
+    font-size: 30px;
+  }
+  .column_miidle_text {
+    // font-size: 30px;
+  }
+}
