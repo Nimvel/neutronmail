@@ -25,7 +25,6 @@ const Content = () => {
 
                 <div className={s.background} />
 
-
             </div>
 
             <div className={s.columns}>
@@ -36,7 +35,8 @@ const Content = () => {
                         <p className={s.miidle_text}>Data Security and Neutrality</p>
                     </div>
 
-                    <p>NeutronMail is incorporated in Somewhere and all our servers are located in Switzerland. This means all user data is
+                    <p>NeutronMail is incorporated in Somewhere and all our serv-<br />
+                    ers are located in Switzerland. This means all user data is
                         protected by strict Swiss privacy laws.</p>
                 </div>
 
@@ -62,12 +62,16 @@ const Content = () => {
                 </div>
             </div>
 
-            <div>
+<div className={s.border_left} />
+<div className={s.border_right} />
+<div className={s.border_bottom} />
+
+            <div className={s.physical_security}>
                 <p className={s.title}>Physical Security</p>
-                <p>NeutronMail's infrastructure resides in Europe's <p className='red_text'>most secure</p> datacenter, underneath 1000 meters of solid rock.</p>
+                <p>NeutronMail's infrastructure resides in Europe's <span className='red_text'>most secure</span> datacenter, underneath 1000 meters of solid rock.</p>
             </div>
 
-            <div>
+            <div className={s.learn_more} >
                 <p>Learn more about our security features</p>
             </div>
 

@@ -25,9 +25,7 @@
 .content {
   @include dimensions(100vw, 100vw);
 
-  .title {
-    @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 60px, center);
-  }
+  
 
   .button_img {
     .apple, .big_apple {
@@ -68,6 +66,10 @@
     transform: translate(-50%, -50%);
     display: grid;
 
+    .title {
+      @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 4vw, center);
+    }
+
     .text,
     .red_text {
       @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 40px, center);
@@ -102,14 +104,16 @@
 
 .columns {
   display: grid;
-  gap: 2vw;
-  grid-template-columns: 30% 30% 30%;
+  gap: 3vw;
+  grid-template-columns: 31% 31% 31%;
 
-  @include dimensions(70vw, 25vw);
+  @include dimensions(70vw, 22vw);
   @include possitionTopLeft(relative, 5vw, 50%);
   transform: translate(-50%);
 
   @include font("TitilliumWeb-Regular", #a1a1a1, 0.8vw, left);
+
+
 
   p {
     margin-left: 1vw;
@@ -123,7 +127,7 @@
     grid-template-columns: 13% 87%;
 
     @include dimensions(23vw, 4vw);
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
 
     .column_title {
       font-size: 1.7vw;
@@ -157,28 +161,78 @@
 
 }
 
+.border_left {
+  @include possitionTopLeft(absolute, 40vw, 37.5vw);
+  @include dimensions(1vw, 15vw);
+}
+
+.border_right {
+  @include possitionTopLeft(absolute, 51vw, 62vw);
+  @include dimensions(1vw, 29.1vw);
+}
+
+.border_left, .border_right  {
+  z-index: -2;
+  border-right: 0.1vw solid #b6b6b6;
+}
+
+.border_bottom {
+  @include possitionTopLeft(absolute, 80.5vw, 0);
+  @include dimensions(53.1vw, 1vw);
+  border-bottom: 0.1vw solid #b6b6b6;
+  z-index: -2;
+}
+
+.physical_security {
+  @include font("TitilliumWeb-Bold", #969696, 1.5vw, right);
+  @include possitionTopLeft(relative, 1vw, 40vw);
+  transform: translate(-50%);
+  @include dimensions(40vw, 10vw);
+
+  .title {
+    font-size: 4vw;
+    margin-bottom: 1vw;
+    color: rgba(69, 69, 69, 0.839);
+  }
+}
+
+.learn_more {
+  @include font("TitilliumWeb-Bold", #969696, 1vw, center);
+  padding-top: 1vw;
+  @include possitionTopLeft(relative, 2.4vw, 52.5vw);
+  @include dimensions(20vw, 2vw);
+  border: 0.1vw solid #b6b6b6;
+  border-radius: 2vw;
+}
+
 .blocks {
   display: grid;
+  @include possitionTopLeft(relative, 5vw, 50%);
+  transform: translate(-50%);
+  @include dimensions(60vw, 60vw);
 
   .block_1 {
     display: flex;
+    @include possitionTopLeft(relative, 2vw, 0);
     @include dimensions(35vw, 10vw);
 
     .points {
       display: grid;
       margin-top: 1vw;
+      justify-items: center;
       @include dimensions(15vw, 5vw);
 
       .black_point {
-        background-color: black;
+        background-color: #1d1d1d;
+        @include dimensions(1vw, 1vw);
       }
 
       .grey_point {
-        background-color: grey;
+        background-color: #cbcbcb;
+        @include dimensions(0.7vw, 0.7vw);
       }
 
       .black_point, .grey_point {
-        @include dimensions(1vw, 1vw);
         border-radius: 50%;
       }
     }
@@ -190,14 +244,15 @@
 }
 
 .fonts {
-  @include image("../../assets/images/fonts.png", center, 100%);
-  @include dimensions(55vw, 3vw);
+  @include image("../../assets/images/fonts.png", 0 0, 100%);
+  @include possitionTopLeft(relative, 5vw, 0);
+  @include dimensions(52vw, 5vw);
 }
 
 .img_1 {
   @include image("../../assets/images/img_1.png", center, 100%);
   @include dimensions(35vw, 45vw);
-  @include possitionTopLeft(absolute, 90vw, 55vw);
+  @include possitionTopLeft(absolute, 10vw, 25vw);
   z-index: -1;
 }
 
