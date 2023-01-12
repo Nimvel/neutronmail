@@ -16,7 +16,7 @@
 }
 
 @mixin font($family, $color, $size, $align) {
-  font-family: $family; 
+  font-family: $family;
   color: $color;
   font-size: $size;
   text-align: $align;
@@ -25,48 +25,75 @@
 .App {
   user-select: none;
   text-justify: center;
-  /* text-align: center; */
   @include font("TitilliumWeb-Regular", #959595, 1vw, left);
 
-  .button {
-    @include font("TitilliumWeb-Regular", white, 1vw, center);
-    // font-weight: bold;
-    cursor: pointer;
+  p {
+    margin: 0;
+    padding: 0;
+  }
 
+  .red_text {
+    color: red;
+  }
+
+  .button {
+    cursor: pointer;
     border: none;
-    border-radius: 1vw;
+    border-radius: 2vw;
+  }
+
+  .gradient_button {
+    @include font("TitilliumWeb-Bold", white, 1vw, center);
+    @include dimensions(13vw, 3vw);
 
     background: linear-gradient(to right, #717fa0, #5f2966);
-    box-shadow: 0 0.3vw 1vw #6d76a4;
 
-    height: 1.7vw;
-    width: 5vw;
+    span {
+      @include possitionTopLeft(relative, 30%, 0);
     }
+  }
 
-  
-  
+  .small_button {
+    @include dimensions(3vw, 3vw);
+    background-color: #754c7a;
+    border-radius: 50%;
+  }
+
+  .black_button {
+    @include font("TitilliumWeb-Bold", white, 1vw, left);
+    background-color: black;
+    @include dimensions(12vw, 3vw);
+    border-radius: 0.5vw;
+    
+    display: grid;
+    grid-template-columns: 25% 85%;
+    grid-template-areas:
+    'img text'
+    'img text';
+  }
+
 }
 
 @font-face {
   /* TitilliumWeb-SemiBold */
-  font-family: "TitilliumWeb-SemiBold"; 
+  font-family: "TitilliumWeb-SemiBold";
   src: url("./assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* TitilliumWeb-Regular */
-  font-family: "TitilliumWeb-Regular"; 
+  font-family: "TitilliumWeb-Regular";
   src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* TitilliumWeb-Bold */
-  font-family: "TitilliumWeb-Bold "; 
+  font-family: "TitilliumWeb-Bold ";
   src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
-  } 
+}
 
 @font-face {
   /* Niconne-Regular */
-  font-family: "Niconne-Regular"; 
+  font-family: "Niconne-Regular";
   src: url("./assets/fonts/Niconne/Niconne-Regular.ttf") format("truetype");
-  } 
+}

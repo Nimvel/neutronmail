@@ -9,9 +9,6 @@
   left: $left;
 }
 
-  // background-image: url($url);
-  // linear-gradient(to right, #717fa0, #5f2966)
-
 @mixin image($url, $position, $size) {
   background: url($url) no-repeat;
   background-position: $position;
@@ -19,55 +16,193 @@
 }
 
 @mixin font($family, $color, $size, $align) {
-  font-family: $family; 
+  font-family: $family;
   color: $color;
   font-size: $size;
   text-align: $align;
 }
 
 .content {
+  @include dimensions(100vw, 100vw);
 
-  .header {
-
-    .title {
-      @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 60px, center);
-    }
-
-    .text, .red_text {
-    @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 40px, center);
-    }
-
-    .red_text {
-      color: red;
-    }
-
-    .background {
-      @include image("../../assets/images/background.png", center, cover);
-    }
-
-    // .apple, .play {
-    //   @include dimensions(13vw, 13vw);
-    // }
+  .title {
+    @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 60px, center);
   }
+
+  .button_img {
+    .apple, .big_apple {
+      @include image("../../assets/images/apple.png", center, 50%);
+    }
   
+    .play {
+      @include image("../../assets/images/play.png", 60%, 50%);
+    }
+
+    .play_color {
+      @include image("../../assets/images/play_color.png", 60%, 50%);
+    }
+  
+    .apple,
+    .play{
+      @include dimensions(2.3vw, 2.3vw);
+      @include possitionTopLeft(relative, 50%, 0.3vw);
+      transform: translate(0, -50%);
+    }
+
+    .big_apple,
+    .play_color {
+      grid-area: img;
+      @include dimensions(3.5vw, 3.5vw);
+      @include possitionTopLeft(relative, -0.3vw, -0.3vw);
+    }
+  }
 }
 
-.apple {
-  @include image("../../assets/images/img_1.png", center, cover);
+.header {
+  @include dimensions(100vw, 40vw);
+  display: grid;
 
-}
+  .block {
+    @include dimensions(60vw, 10vw);
+    @include possitionTopLeft(relative, 50%, 50%);
+    transform: translate(-50%, -50%);
+    display: grid;
 
-.play {
-  @include image("../../assets/images/play.png", center, 100%);
+    .text,
+    .red_text {
+      @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 40px, center);
+    }
+  }
+
+  .buttons_block {
+    display: flex;
+    gap: 1vw;
+    @include dimensions(20vw, 3vw);
+    @include possitionTopLeft(relative, 0, 50%);
+    transform: translate(-50%);
+  
+  }
+
+  .shadow {
+    @include possitionTopLeft(absolute, 27.7vw, 50%);
+    transform: translate(-50%);
+
+    @include dimensions(25vw, 1vw);
+    border-radius: 50%;
+    box-shadow: -1vw 3vw 0.7vw #4274d5;
+  }
+
+  .background {
+    @include image("../../assets/images/background.png", 0, 100%);
+    @include dimensions(100vw, 40vw);
+    @include possitionTopLeft(absolute, 5vw, 0);
+    z-index: -1;
+  }
 }
 
 .columns {
-  @include font("TitilliumWeb-Regular", #555555, 14px, left);
+  display: grid;
+  gap: 2vw;
+  grid-template-columns: 30% 30% 30%;
 
-  .column_title {
-    font-size: 30px;
+  @include dimensions(70vw, 25vw);
+  @include possitionTopLeft(relative, 5vw, 50%);
+  transform: translate(-50%);
+
+  @include font("TitilliumWeb-Regular", #a1a1a1, 0.8vw, left);
+
+  p {
+    margin-left: 1vw;
   }
-  .column_miidle_text {
-    // font-size: 30px;
+
+  .column {
+    display: grid;
+    grid-template-areas:
+      'img text'
+      'img text';
+    grid-template-columns: 13% 87%;
+
+    @include dimensions(23vw, 4vw);
+    margin-bottom: 1vw;
+
+    .column_title {
+      font-size: 1.7vw;
+      color: #555555;
+    }
+
+    .miidle_text {
+      @include possitionTopLeft(relative, -0.6vw, 0);
+      font-size: 1.1vw;
+    }
+
+    .shield,
+    .lock,
+    .key {
+      grid-area: img;
+      @include dimensions(4vw, 4vw);
+    }
+
+    .shield {
+      @include image("../../assets/images/shield.png", center, 100%);
+    }
+
+    .lock {
+      @include image("../../assets/images/lock.png", center, 130%);
+    }
+
+    .key {
+      @include image("../../assets/images/key.png", center, 100%);
+    }
+  }
+
+}
+
+.blocks {
+  display: grid;
+
+  .block_1 {
+    display: flex;
+    @include dimensions(35vw, 10vw);
+
+    .points {
+      display: grid;
+      margin-top: 1vw;
+      @include dimensions(15vw, 5vw);
+
+      .black_point {
+        background-color: black;
+      }
+
+      .grey_point {
+        background-color: grey;
+      }
+
+      .black_point, .grey_point {
+        @include dimensions(1vw, 1vw);
+        border-radius: 50%;
+      }
+    }
+
+    .text {
+      @include font("Niconne-Regular", #555555, 2vw, left)
+    }
   }
 }
+
+.fonts {
+  @include image("../../assets/images/fonts.png", center, 100%);
+  @include dimensions(55vw, 3vw);
+}
+
+.img_1 {
+  @include image("../../assets/images/img_1.png", center, 100%);
+  @include dimensions(35vw, 45vw);
+  @include possitionTopLeft(absolute, 90vw, 55vw);
+  z-index: -1;
+}
+
+.brands {
+  @include image("../../assets/images/brands.png", center, 100%);
+  @include dimensions(70vw, 25vw);
+}
+

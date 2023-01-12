@@ -26,6 +26,7 @@
   display: flex;
   gap: 40vw;
   @include possitionTopLeft(relative, 1vw, 5vw);
+  @include dimensions(100vw, 5vw);
 
   span:hover {
     font-weight: bold;
@@ -51,6 +52,18 @@
   gap: 1vw;
 
   .log_in {
-        font-weight: bold;
+    font-weight: bold;
+  }
+
+  .button {
+    @include dimensions(5vw, 2vw);
+    @include font("TitilliumWeb-Regular", white, 0.9vw, center);
+
+    background: linear-gradient(135deg, #5f2966, #4274d5);
+    box-shadow: 0 0.5vw 1vw #6d76a4;
+
+    span {
+      @include possitionTopLeft(relative, 15%, 0);
+    }
   }
 }

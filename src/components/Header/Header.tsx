@@ -3,8 +3,8 @@ import s from './Header.module.scss'
 const Header = () => {
     return (
         <div className={s.header}>
-            <div className={s.logo_block}>
-            <div className={s.logo}>neutronMail</div>
+            <div>
+                <div className={s.logo}>neutronMail</div>
                 <div className={s.languages}>
                     <span>English</span>
                     <span>French</span>
@@ -12,7 +12,6 @@ const Header = () => {
                     <span>Polish</span>
                 </div>
             </div>
-                
 
             <div className={s.navbar}>
                 <span>About</span>
@@ -22,7 +21,9 @@ const Header = () => {
                 <span>Support</span>
                 <span>Donate</span>
                 <span className={s.log_in}>Log in</span>
-                <span className='button'>Sign up</span>
+                <div className={`button ${s.button}`}>
+                <span>Sign up</span>
+                </div>
             </div>
         </div>
     )
