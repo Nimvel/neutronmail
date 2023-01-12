@@ -23,224 +23,38 @@
 }
 
 .content {
-  @include dimensions(100vw, 100vw);
-
-  
-
-  .button_img {
-    .apple, .big_apple {
-      @include image("../../assets/images/apple.png", center, 50%);
-    }
-  
-    .play {
-      @include image("../../assets/images/play.png", 60%, 50%);
-    }
-
-    .play_color {
-      @include image("../../assets/images/play_color.png", 60%, 50%);
-    }
-  
-    .apple,
-    .play{
-      @include dimensions(2.3vw, 2.3vw);
-      @include possitionTopLeft(relative, 50%, 0.3vw);
-      transform: translate(0, -50%);
-    }
-
-    .big_apple,
-    .play_color {
-      grid-area: img;
-      @include dimensions(3.5vw, 3.5vw);
-      @include possitionTopLeft(relative, -0.3vw, -0.3vw);
-    }
-  }
-}
-
-.header {
-  @include dimensions(100vw, 40vw);
-  display: grid;
-
-  .block {
-    @include dimensions(60vw, 10vw);
-    @include possitionTopLeft(relative, 50%, 50%);
-    transform: translate(-50%, -50%);
-    display: grid;
-
-    .title {
-      @include font("TitilliumWeb-Bold", rgba(69, 69, 69, 0.839), 4vw, center);
-    }
-
-    .text,
-    .red_text {
-      @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 40px, center);
-    }
-  }
-
-  .buttons_block {
-    display: flex;
-    gap: 1vw;
-    @include dimensions(20vw, 3vw);
-    @include possitionTopLeft(relative, 0, 50%);
-    transform: translate(-50%);
-  
-  }
-
-  .shadow {
-    @include possitionTopLeft(absolute, 27.7vw, 50%);
-    transform: translate(-50%);
-
-    @include dimensions(25vw, 1vw);
-    border-radius: 50%;
-    box-shadow: -1vw 3vw 0.7vw #4274d5;
-  }
-
-  .background {
-    @include image("../../assets/images/background.png", 0, 100%);
-    @include dimensions(100vw, 40vw);
-    @include possitionTopLeft(absolute, 5vw, 0);
-    z-index: -1;
-  }
-}
-
-.columns {
-  display: grid;
-  gap: 3vw;
-  grid-template-columns: 31% 31% 31%;
-
-  @include dimensions(70vw, 22vw);
-  @include possitionTopLeft(relative, 5vw, 50%);
-  transform: translate(-50%);
-
-  @include font("TitilliumWeb-Regular", #a1a1a1, 0.8vw, left);
-
-
-
-  p {
-    margin-left: 1vw;
-  }
-
-  .column {
-    display: grid;
-    grid-template-areas:
-      'img text'
-      'img text';
-    grid-template-columns: 13% 87%;
-
-    @include dimensions(23vw, 4vw);
-    margin-bottom: 1.5vw;
-
-    .column_title {
-      font-size: 1.7vw;
-      color: #555555;
-    }
-
-    .miidle_text {
-      @include possitionTopLeft(relative, -0.6vw, 0);
-      font-size: 1.1vw;
-    }
-
-    .shield,
-    .lock,
-    .key {
-      grid-area: img;
-      @include dimensions(4vw, 4vw);
-    }
-
-    .shield {
-      @include image("../../assets/images/shield.png", center, 100%);
-    }
-
-    .lock {
-      @include image("../../assets/images/lock.png", center, 130%);
-    }
-
-    .key {
-      @include image("../../assets/images/key.png", center, 100%);
-    }
-  }
-
-}
-
-.border_left {
-  @include possitionTopLeft(absolute, 40vw, 37.5vw);
-  @include dimensions(1vw, 15vw);
-}
-
-.border_right {
-  @include possitionTopLeft(absolute, 51vw, 62vw);
-  @include dimensions(1vw, 29.1vw);
-}
-
-.border_left, .border_right  {
-  z-index: -2;
-  border-right: 0.1vw solid #b6b6b6;
-}
-
-.border_bottom {
-  @include possitionTopLeft(absolute, 80.5vw, 0);
-  @include dimensions(53.1vw, 1vw);
-  border-bottom: 0.1vw solid #b6b6b6;
-  z-index: -2;
+  @include dimensions(100vw, 150vw);
 }
 
 .physical_security {
-  @include font("TitilliumWeb-Bold", #969696, 1.5vw, right);
-  @include possitionTopLeft(relative, 1vw, 40vw);
+  @include font("TitilliumWeb-Regular", #969696, 1.3vw, right);
+  @include possitionTopLeft(relative, 1vw, 42.5vw);
   transform: translate(-50%);
-  @include dimensions(40vw, 10vw);
+  @include dimensions(35vw, 10vw);
 
   .title {
-    font-size: 4vw;
+    @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 3.5vw, right);
+
     margin-bottom: 1vw;
     color: rgba(69, 69, 69, 0.839);
   }
 }
 
+.physical_security:before {
+  content: '';
+  @include possitionTopLeft(absolute, 13.3vw, -25.6vw);
+  @include dimensions(53.1vw, 1vw);
+  border-bottom: 0.1vw solid #b6b6b6;
+  z-index: -2;
+}
+
 .learn_more {
   @include font("TitilliumWeb-Bold", #969696, 1vw, center);
-  padding-top: 1vw;
-  @include possitionTopLeft(relative, 2.4vw, 52.5vw);
+  padding-top: 0.5vw;
+  @include possitionTopLeft(relative, 4vw, 52.5vw);
   @include dimensions(20vw, 2vw);
   border: 0.1vw solid #b6b6b6;
   border-radius: 2vw;
-}
-
-.blocks {
-  display: grid;
-  @include possitionTopLeft(relative, 5vw, 50%);
-  transform: translate(-50%);
-  @include dimensions(60vw, 60vw);
-
-  .block_1 {
-    display: flex;
-    @include possitionTopLeft(relative, 2vw, 0);
-    @include dimensions(35vw, 10vw);
-
-    .points {
-      display: grid;
-      margin-top: 1vw;
-      justify-items: center;
-      @include dimensions(15vw, 5vw);
-
-      .black_point {
-        background-color: #1d1d1d;
-        @include dimensions(1vw, 1vw);
-      }
-
-      .grey_point {
-        background-color: #cbcbcb;
-        @include dimensions(0.7vw, 0.7vw);
-      }
-
-      .black_point, .grey_point {
-        border-radius: 50%;
-      }
-    }
-
-    .text {
-      @include font("Niconne-Regular", #555555, 2vw, left)
-    }
-  }
 }
 
 .fonts {
@@ -248,16 +62,3 @@
   @include possitionTopLeft(relative, 5vw, 0);
   @include dimensions(52vw, 5vw);
 }
-
-.img_1 {
-  @include image("../../assets/images/img_1.png", center, 100%);
-  @include dimensions(35vw, 45vw);
-  @include possitionTopLeft(absolute, 10vw, 25vw);
-  z-index: -1;
-}
-
-.brands {
-  @include image("../../assets/images/brands.png", center, 100%);
-  @include dimensions(70vw, 25vw);
-}
-

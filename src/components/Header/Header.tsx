@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className={s.header}>
             <div>
-                <div className={s.logo}>neutronMail</div>
+                <div className={s.logo}>neutron<span className='purple_text'>Mail</span></div>
                 <div className={s.languages}>
                     <span>English</span>
                     <span>French</span>

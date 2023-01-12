@@ -24,9 +24,9 @@
 
 .header {
   display: flex;
-  gap: 40vw;
+  gap: 35vw;
   @include possitionTopLeft(relative, 1vw, 5vw);
-  @include dimensions(100vw, 5vw);
+  @include dimensions(100vw, 7vw);
 
   span:hover {
     font-weight: bold;
@@ -42,7 +42,7 @@
   @include font("TitilliumWeb-Regular", #959595, 0.9vw, left);
 
   display: flex;
-  gap: 1vw;
+  gap: 2vw;
 }
 
 .navbar {

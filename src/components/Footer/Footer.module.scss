@@ -1,17 +1,90 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
 .footer {
-  .footer_title {
-    @include font("TitilliumWeb-Bold", #5c5c5c, 18px, left);
+  @include font("TitilliumWeb-Regular", #484848, 0.8vw, left);
+
+  @include dimensions(70vw, 10vw);
+  @include possitionTopLeft(relative, 3vw, 10vw);
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  @include dimensions(15vw, 9vw);
+  margin-left: 1vw;
+}
+
+.columns {
+  display: flex;
+  justify-content: right;
+  margin-left: 11vw;
+
+  .column_1 {
+margin-right: 2.5vw;
+  }
+
+  .column_1:before {
+    content: '';
+    @include possitionTopLeft(absolute, 0, 39vw); 
+    @include dimensions(1vw, 17vw);
+    border-right: #d1d1d1 0.2vw solid;
+  }
+
+  p {
+    @include font("TitilliumWeb-Bold", #5c5c5c, 1.2vw, right);
+  }
+
+  ul {
+    @include dimensions(8vw, 10vw);
+    list-style: none;
+    // background-color: red;
+
+    li {
+      text-align: right;
     }
-  
-    .footer_text {
-    @include font("TitilliumWeb-Regular", #5c5c5c, 14px, left);
-    }
-  
-    .footer_bold_text {
-    @include font("TitilliumWeb-Bold", #5c5c5c, 14px, left);
-    }
-  
-    .copyright_text {
-    @include font("TitilliumWeb-Regular", #5c5c5c, 12px, center);
-    }
+  }
+}
+
+.copyright_text {
+  @include font("TitilliumWeb-Regular", #252525, 0.7vw, left);
+
+  // font-size: 0.7vw;
+  @include dimensions(25vw, 3vw);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+
+  span {
+    
+  }
+
+  p {
+    margin-top: -1vw;
+  }
 }

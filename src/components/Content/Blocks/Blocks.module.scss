@@ -1,0 +1,190 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
+.blocks {
+  display: grid;
+
+  @include possitionTopLeft(relative, 5vw, 50%);
+  transform: translate(-50%);
+  @include dimensions(60vw, 65vw);
+
+  .title {
+    @include font("TitilliumWeb-Light", #555555, 2vw, right);
+  }
+
+  .big_apple {
+    @include image("../../../assets/images/apple.png", center, 50%);
+  }
+
+  .play_color {
+    @include image("../../../assets/images/play_color.png", 60%, 50%);
+  }
+
+  .big_apple,
+  .play_color {
+    grid-area: img;
+    @include dimensions(3.5vw, 3.5vw);
+    @include possitionTopLeft(relative, -0.3vw, -0.3vw);
+  }
+}
+
+.block_1 {
+  display: flex;
+  gap: 1vw;
+  @include font("Niconne-Regular", #555555, 1.6vw, left);
+
+  @include possitionTopLeft(relative, 2vw, 0);
+  @include dimensions(30vw, 10vw);
+
+  .points {
+    display: grid;
+    margin-top: 1vw;
+    justify-items: center;
+    @include dimensions(2vw, 5vw);
+
+    .black_point {
+      background-color: #1d1d1d;
+      @include dimensions(0.7vw, 0.7vw);
+    }
+
+    .grey_point {
+      background-color: #cbcbcb;
+      @include dimensions(0.6vw, 0.6vw);
+    }
+
+    .black_point,
+    .grey_point {
+      border-radius: 50%;
+    }
+  }
+
+  .text {
+    @include font("Niconne-Regular", #b9b9b9, 1.3vw, left);
+  }
+}
+
+.block_2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+
+  @include font("TitilliumWeb-Regular", #919191, 0.9vw, right);
+
+  @include possitionTopLeft(relative, 1vw, 11vw);
+  @include dimensions(25vw, 12vw);
+
+  .buttons_block {
+    display: flex;
+    gap: 1vw;
+    @include dimensions(20vw, 3vw);
+  }
+}
+
+.block_2:before {
+  content: '';
+  @include possitionTopLeft(absolute, 18.8vw, -10vw);
+  @include dimensions(90vw, 1vw);
+  border-bottom: 0.1vw solid #b6b6b6;
+  z-index: -2;
+}
+
+.block_3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include font("TitilliumWeb-Regular", #919191, 1.6vw, center);
+
+  @include possitionTopLeft(relative, 4vw, 26vw);
+  transform: translate(-50%);
+  @include dimensions(37vw, 8vw);
+
+  .buttons_block {
+    display: flex;
+    gap: 1vw;
+    @include dimensions(25vw, 3vw);
+    @include possitionTopLeft(relative, 2vw, 0);
+
+    .download {
+      display: flex;
+      @include dimensions(25vw, 3vw);
+
+      .downloadImg {
+        @include possitionTopLeft(relative, 0, 1vw);
+        @include image("../../../assets/images/download.png", 60%, 50%);
+        @include dimensions(3vw, 3vw);
+      }
+      span {
+        @include possitionTopLeft(relative, 0.75vw, 0);
+      }
+  }
+
+    .donate {
+      display: flex;
+      @include dimensions(15vw, 3vw);
+      box-shadow: 0 0.5vw 1vw #65ebb6;
+
+      .dollar {
+        @include possitionTopLeft(relative, 50%, 1.5vw);
+        transform: translate(0, -50%);
+        @include image("../../../assets/images/dollar.png", 60%, 50%);
+        @include dimensions(1.5vw, 2vw);
+      }
+      span {
+        @include possitionTopLeft(relative, 0.75vw, 1vw);
+      }
+  }
+  
+  }
+}
+
+.block_3:before {
+  content: '';
+  @include possitionTopLeft(absolute, 14vw, -28vw);
+  @include dimensions(73vw, 1vw);
+  border-bottom: 0.1vw solid #b6b6b6;
+  z-index: -2;
+}
+
+.block_4 {
+  justify-content: right;
+  @include font("TitilliumWeb-Regular", #919191, 0.8vw, right);
+
+  @include possitionTopLeft(relative, 4vw, 30vw);
+  transform: translate(-50%);
+  @include dimensions(45vw, 2vw);
+}
+
+.img_1 {
+  @include image("../../../assets/images/img_1.png", center, 100%);
+  @include dimensions(30vw, 45vw);
+  @include possitionTopLeft(absolute, 0, 28vw);
+  z-index: -1;
+}
+
+.brands {
+  @include image("../../../assets/images/brands.png", center, 100%);
+  @include possitionTopLeft(relative, -10vw, 50%);
+transform: translate(-50%);
+  @include dimensions(53vw, 25vw);
+}

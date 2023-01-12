@@ -36,6 +36,10 @@
     color: red;
   }
 
+  .purple_text {
+    color: #5f2966;
+  }
+
   .button {
     cursor: pointer;
     border: none;
@@ -44,12 +48,22 @@
 
   .gradient_button {
     @include font("TitilliumWeb-Bold", white, 1vw, center);
-    @include dimensions(13vw, 3vw);
+    box-shadow: 0 0.5vw 1vw #6d76a4;
 
     background: linear-gradient(to right, #717fa0, #5f2966);
+  }
 
+  .blue_button {
+    @include font("TitilliumWeb-Bold", white, 1vw, center);
+    background: linear-gradient(to right, #31bcf5, #3163f5);
+    @include dimensions(13vw, 3vw);
+  }
+
+  .gradient_button,
+  .blue_button {
     span {
-      @include possitionTopLeft(relative, 30%, 0);
+      @include possitionTopLeft(relative, 20%, 0);
+      padding: 0 1vw;
     }
   }
 
@@ -60,16 +74,30 @@
   }
 
   .black_button {
-    @include font("TitilliumWeb-Bold", white, 1vw, left);
+    @include font("TitilliumWeb-Light", white, 0.8vw, left);
     background-color: black;
     @include dimensions(12vw, 3vw);
-    border-radius: 0.5vw;
-    
+    border-radius: 0.3vw;
+
     display: grid;
-    grid-template-columns: 25% 85%;
+    grid-template-columns: 30% 70%;
     grid-template-areas:
-    'img text'
-    'img text';
+      'img text'
+      'img text';
+
+    p {
+      @include font("TitilliumWeb-SemiBold", white, 1.4vw, left);
+      margin-top: -1.2vw;
+    }
+
+    .google {
+      @include font("TitilliumWeb-Light", white, 1.4vw, left);
+
+      span {
+        @include font("Niconne-Regular", white, 1.4vw, left);
+      }
+    }
+
   }
 
 }
@@ -88,8 +116,14 @@
 
 @font-face {
   /* TitilliumWeb-Bold */
-  font-family: "TitilliumWeb-Bold ";
+  font-family: "TitilliumWeb-Bold";
   src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  /* TitilliumWeb-Light */
+  font-family: "TitilliumWeb-Light";
+  src: url("./assets/fonts/Titillium_Web/TitilliumWeb-Light.ttf") format("truetype");
 }
 
 @font-face {

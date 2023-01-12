@@ -1,0 +1,99 @@
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+    position: $position;
+    top: $top;
+    left: $left;
+}
+
+@mixin image($url, $position, $size) {
+    background: url($url) no-repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+    font-family: $family;
+    color: $color;
+    font-size: $size;
+    text-align: $align;
+}
+
+.header {
+    @include dimensions(100vw, 40vw);
+    display: grid;
+
+    .block {
+        @include dimensions(50vw, 10vw);
+
+        @include possitionTopLeft(relative, 7vw, 50%);
+
+        transform: translate(-50%);
+        display: grid;
+
+        .title {
+            @include font("TitilliumWeb-SemiBold", rgba(69, 69, 69, 0.839), 3.5vw, center);
+            margin-bottom: -3vw;
+        }
+
+        .text,
+        .red_text {
+            @include font("TitilliumWeb-Regular", rgba(69, 69, 69, 0.839), 2vw, center);
+        }
+    }
+
+    .buttons_block {
+        display: flex;
+        gap: 1vw;
+        @include dimensions(20vw, 3vw);
+        @include possitionTopLeft(relative, -7vw, 50%);
+        transform: translate(-50%);
+
+        .button {
+            @include dimensions(13vw, 3vw);
+        }
+
+        .apple {
+            @include image("../../../assets/images/apple.png", center, 50%);
+        }
+
+        .play {
+            @include image("../../../assets/images/play.png", 60%, 50%);
+        }
+
+        .apple,
+        .play {
+            @include dimensions(2.3vw, 2.3vw);
+            @include possitionTopLeft(relative, 50%, 0.3vw);
+            transform: translate(0, -50%);
+        }
+    }
+
+    .buttons_block:before {
+        content: '';
+        @include possitionTopLeft(absolute, -1.5vw, 50%);
+        transform: translate(-50%);
+
+        @include dimensions(25vw, 1vw);
+        border-radius: 50%;
+        box-shadow: -1vw 3vw 0.7vw #4274d5;
+        z-index: -2;
+    }
+
+    .background {
+        @include image("../../../assets/images/background.png", 0, 100%);
+        @include dimensions(100vw, 40vw);
+        @include possitionTopLeft(absolute, 0, 0);
+        z-index: -1;
+    }
+
+    .background:after {
+        content: '';
+        box-shadow: 1vw 1vw 15vw 25vw white;
+        @include dimensions(100vw, 40vw);
+        @include possitionTopLeft(absolute, -40vw, 0);
+    }
+}

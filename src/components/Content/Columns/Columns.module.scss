@@ -1,0 +1,96 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin possitionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin image($url, $position, $size) {
+  background: url($url) no-repeat;
+  background-position: $position;
+  background-size: $size;
+}
+
+@mixin font($family, $color, $size, $align) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  text-align: $align;
+}
+
+.columns {
+  display: grid;
+  gap: 3vw;
+  grid-template-columns: 31% 31% 31%;
+  z-index: -2;
+
+  @include dimensions(70vw, 17vw);
+  @include possitionTopLeft(relative, 0vw, 50%);
+  transform: translate(-50%);
+
+  @include font("TitilliumWeb-Regular", #a1a1a1, 0.8vw, left);
+
+  p {
+    margin-left: 1vw;
+  }
+}
+
+.column_1:before,
+.column_2:before {
+  content: '';
+  border-right: 0.1vw solid #b6b6b6;
+}
+
+.column_1:before {
+  @include possitionTopLeft(absolute, -10vw, 22vw);
+  @include dimensions(1vw, 15vw);
+}
+
+.column_2:before {
+  @include possitionTopLeft(absolute, 0.35vw, 46.5vw);
+  @include dimensions(1vw, 30.7vw);
+}
+
+.column {
+  display: grid;
+  grid-template-areas:
+    'img text'
+    'img text';
+  grid-template-columns: 13% 87%;
+
+  @include dimensions(23vw, 4vw);
+  margin-bottom: 1.5vw;
+
+  .column_title {
+    font-size: 1.7vw;
+    color: #555555;
+  }
+
+  .miidle_text {
+    @include possitionTopLeft(relative, -0.6vw, 0);
+    font-size: 1.1vw;
+  }
+
+  .shield,
+  .lock,
+  .key {
+    grid-area: img;
+    @include dimensions(4vw, 4vw);
+  }
+
+  .shield {
+    @include image("../../../assets/images/shield.png", center, 100%);
+  }
+
+  .lock {
+    @include image("../../../assets/images/lock.png", center, 130%);
+  }
+
+  .key {
+    @include image("../../../assets/images/key.png", center, 100%);
+  }
+}
