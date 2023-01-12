@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/neutronmail/static/css/main.abd64e84.css",
-    "main.js": "/neutronmail/static/js/main.d1fe899b.js",
+    "main.css": "/neutronmail/static/css/main.2ac9b7da.css",
+    "main.js": "/neutronmail/static/js/main.6fc6c14d.js",
     "static/js/787.18cb1d09.chunk.js": "/neutronmail/static/js/787.18cb1d09.chunk.js",
+    "static/media/background.png": "/neutronmail/static/media/background.4ff4c2287deaae1ea3a0.png",
+    "static/media/img_1.png": "/neutronmail/static/media/img_1.2df74baca7d3fc6a9391.png",
+    "static/media/TitilliumWeb-Regular.ttf": "/neutronmail/static/media/TitilliumWeb-Regular.e53e0538893d432e0635.ttf",
+    "static/media/TitilliumWeb-SemiBold.ttf": "/neutronmail/static/media/TitilliumWeb-SemiBold.d4d3eeb6e2367e6796c3.ttf",
+    "static/media/TitilliumWeb-Bold.ttf": "/neutronmail/static/media/TitilliumWeb-Bold.a267a8b6b783d7d62039.ttf",
+    "static/media/Niconne-Regular.ttf": "/neutronmail/static/media/Niconne-Regular.679eb669af97c36d86a6.ttf",
     "index.html": "/neutronmail/index.html",
-    "main.abd64e84.css.map": "/neutronmail/static/css/main.abd64e84.css.map",
-    "main.d1fe899b.js.map": "/neutronmail/static/js/main.d1fe899b.js.map",
+    "main.2ac9b7da.css.map": "/neutronmail/static/css/main.2ac9b7da.css.map",
+    "main.6fc6c14d.js.map": "/neutronmail/static/js/main.6fc6c14d.js.map",
     "787.18cb1d09.chunk.js.map": "/neutronmail/static/js/787.18cb1d09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abd64e84.css",
-    "static/js/main.d1fe899b.js"
+    "static/css/main.2ac9b7da.css",
+    "static/js/main.6fc6c14d.js"
   ]
 }
