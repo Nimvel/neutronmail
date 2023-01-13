@@ -26,10 +26,7 @@
   @include font("TitilliumWeb-Regular", #484848, 0.8vw, left);
 
   @include dimensions(70vw, 10vw);
-  @include possitionTopLeft(relative, 3vw, 10vw);
-
-  display: flex;
-  flex-wrap: wrap;
+  @include possitionTopLeft(relative, 0vw, 10vw);
 }
 
 .info {
@@ -40,19 +37,19 @@
 }
 
 .columns {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 1fr 1fr;
+
   justify-content: right;
-  margin-left: 11vw;
 
-  .column_1 {
-margin-right: 2.5vw;
-  }
+  @include possitionTopLeft(absolute, 0, 30vw);
+  @include dimensions(35vw, 10vw);
 
-  .column_1:before {
+  .border {
     content: '';
-    @include possitionTopLeft(absolute, 0, 39vw); 
+    @include possitionTopLeft(relative, 0, 0);
     @include dimensions(1vw, 17vw);
-    border-right: #d1d1d1 0.2vw solid;
+    border-right: #e3e3e3 0.2vw solid;
   }
 
   p {
@@ -62,7 +59,6 @@ margin-right: 2.5vw;
   ul {
     @include dimensions(8vw, 10vw);
     list-style: none;
-    // background-color: red;
 
     li {
       text-align: right;
@@ -72,17 +68,11 @@ margin-right: 2.5vw;
 
 .copyright_text {
   @include font("TitilliumWeb-Regular", #252525, 0.7vw, left);
-
-  // font-size: 0.7vw;
   @include dimensions(25vw, 3vw);
 
   display: flex;
   flex-wrap: wrap;
   gap: 1vw;
-
-  span {
-    
-  }
 
   p {
     margin-top: -1vw;

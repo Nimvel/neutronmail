@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
 
             <div className={s.columns}>
-                <div className={s.column_1}>
+                <div>
                     <p>Company</p>
                     <ul>
                         <li>Blog •</li>
@@ -26,6 +26,7 @@ const Footer = () => {
                         <li>Donate •</li>
                     </ul>
                 </div>
+                <div className={s.border}/>
                 <div>
                     <p>Legal</p>
                     <ul>

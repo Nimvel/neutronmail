@@ -105,7 +105,7 @@
   content: '';
   @include possitionTopLeft(absolute, 18.8vw, -10vw);
   @include dimensions(90vw, 1vw);
-  border-bottom: 0.1vw solid #b6b6b6;
+  border-bottom: 0.1vw solid #e3e3e3;
   z-index: -2;
 }
 
@@ -162,7 +162,7 @@
   content: '';
   @include possitionTopLeft(absolute, 14vw, -28vw);
   @include dimensions(73vw, 1vw);
-  border-bottom: 0.1vw solid #b6b6b6;
+  border-bottom: 0.1vw solid #e3e3e3;
   z-index: -2;
 }
 
