@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/neutronmail/static/css/main.6931e04a.css",
-    "main.js": "/neutronmail/static/js/main.709ed8b3.js",
+    "main.css": "/neutronmail/static/css/main.23b1d111.css",
+    "main.js": "/neutronmail/static/js/main.dd30d68e.js",
     "static/js/787.18cb1d09.chunk.js": "/neutronmail/static/js/787.18cb1d09.chunk.js",
     "static/media/background.png": "/neutronmail/static/media/background.4ff4c2287deaae1ea3a0.png",
     "static/media/img_1.png": "/neutronmail/static/media/img_1.2df74baca7d3fc6a9391.png",
@@ -13,12 +13,12 @@
     "static/media/brands.png": "/neutronmail/static/media/brands.1bfbcafa4551bc6ad005.png",
     "static/media/fonts.png": "/neutronmail/static/media/fonts.70a328225adab7690cad.png",
     "index.html": "/neutronmail/index.html",
-    "main.6931e04a.css.map": "/neutronmail/static/css/main.6931e04a.css.map",
-    "main.709ed8b3.js.map": "/neutronmail/static/js/main.709ed8b3.js.map",
+    "main.23b1d111.css.map": "/neutronmail/static/css/main.23b1d111.css.map",
+    "main.dd30d68e.js.map": "/neutronmail/static/js/main.dd30d68e.js.map",
     "787.18cb1d09.chunk.js.map": "/neutronmail/static/js/787.18cb1d09.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6931e04a.css",
-    "static/js/main.709ed8b3.js"
+    "static/css/main.23b1d111.css",
+    "static/js/main.dd30d68e.js"
   ]
 }
